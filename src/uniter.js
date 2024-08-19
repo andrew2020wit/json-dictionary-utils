@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 
-// you must have files /dict-source.longman.json ...
+// you must have files like: /dict-source/longman.json ...
 
 const dictionaries = ['longman', 'cald', 'lingvo'];
 
@@ -37,7 +37,7 @@ const newDictionaryToExport = Object.keys(newDictionaryArticles).map(key => {
 );
 
 function addDictionary(dict, dictionaryName) {
-	let x = 1;
+	let termCounter = 0;	
 	dict.terms.forEach(term => {
 		let currentTerm = term.term;
 		
@@ -49,13 +49,14 @@ function addDictionary(dict, dictionaryName) {
 			newDictionaryArticles[currentTerm] = [];
 		}
 		
-		x++;
-		// console.log(x, currentTerm);
+		termCounter++;
 
 		term.articles.forEach(art => art.dictionaryName = dictionaryName);
 
 		newDictionaryArticles[currentTerm] = [...(newDictionaryArticles[currentTerm]), ...term.articles];
 	});
+
+	console.log(dictionaryName, ': ', termCounter);
 }
 
 fs.writeFileSync(outputPath, JSON.stringify({ formatDescriptor, dictionaryName, dictionaryTermLanguage, dictionaryLicense, updateDate, terms: newDictionaryToExport }, null, 2));
