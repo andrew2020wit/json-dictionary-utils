@@ -1,0 +1,11 @@
+{
+  "name": "json-dictionary-utils",
+  "version": "1.0.0",
+  "description": "Json dictionary utils",
+  "main": "src/index.js",
+  "scripts": {
+    "uniter": "node src/uniter.js"
+  },
+  "author": "Andrew Faurash",
+  "license": "MIT"
+}
