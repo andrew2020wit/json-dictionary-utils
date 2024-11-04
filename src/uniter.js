@@ -2,7 +2,7 @@ const fs = require('node:fs');
 
 // you must have files like: /dict-source/longman.json ...
 
-const dictionaries = ['cald', 'longman', 'lingvo'];
+const dictionaries = ['cald-with-ext-id', 'longman', 'lingvo'];
 
 const dictionaryFolder = './dict-source/';
 

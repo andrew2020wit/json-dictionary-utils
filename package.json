@@ -4,7 +4,8 @@
   "description": "Json dictionary utils",
   "main": "src/index.js",
   "scripts": {
-    "uniter": "node src/uniter.js"
+    "uniter": "node src/uniter.js",
+    "to-anki": "node src/dictionary-to-anki.js"
   },
   "author": "Andrew Faurash",
   "license": "MIT"
